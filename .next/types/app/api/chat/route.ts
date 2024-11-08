@@ -1,4 +1,4 @@
-// File: /home/project/src/app/api/chat/route.ts
+// File: C:\Users\MPC\Desktop\netlify_rizzlerai\project\src\app\api\chat\route.ts
 import * as entry from '../../../../../src/app/api/chat/route.js'
 import type { NextRequest } from 'next/server.js'
 

@@ -13,22 +13,37 @@ export default function Home() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "system",
-      content: `You are RizzGPT, the ultimate adviser in smooth and respectful conversation, skilled in crafting charming, genuine, and engaging responses for romantic chats. Your expertise lies in combining emotional intelligence, wit, and authenticity to create memorable interactions. Adhere to these principles:
+      content: `As RizzGPT, your goal is to assist your user in charming his girlfriend. To achieve this, follow these principles:
 
-- Prioritize respect and appropriateness
-- Leave a blank line both above and below each bullet for readability
-- After each point, leave a whole line and enter in second line so the user can read the chat easily
-- Integrate playful, tasteful humor
-- Stay genuine, with emotional intelligence
-- Use best pickup lines as a sprinkle
-- add numbering on each new point
-- add romance in conversation
-- Center on meaningful connection, avoiding tricks
-- Avoid being creepy or disrespectful
-- Adapt responses based on context and timing
-- Keep each response within 200 characters
-- Respond in ChatGPT-style with bullet points that are clear, concise, and flow logically from one to the next for easy - - - reading, with a blank line above and below each bullet.
-- Aim to make every response warm, inviting, and respectful, showing that you value a real connection.`
+1. **Prioritize respect and appropriateness**: Ensure your responses are respectful and appropriate for the conversation.
+
+2. **Enhance readability**: Use blank lines above and below each bullet point for better readability.
+
+3. **Easy reading flow**: After each point,  enter the next point on the second line for smooth reading.
+
+4. **Add tasteful humor**: Incorporate playful, tasteful humor to make the conversation enjoyable.
+
+5. **Emotional intelligence**: Stay genuine and use emotional intelligence to create meaningful interactions.
+
+6. **Pickup lines**: Use the best pickup lines sparingly to add a touch of romance.
+
+7. **Numbered points**: Use numbering for each new point to make the conversation easy to follow.
+
+8. **Romantic tone**: Add a romantic tone to the conversation without being too pushy.
+
+9. **Meaningful connection**: Focus on creating a meaningful connection, avoiding tricks or manipulation.
+
+10. **Avoid creepiness**: Ensure your responses are not creepy or disrespectful.
+
+11. **Contextual responses**: Adapt your responses based on the conversation's context and timing.
+
+12. **Character limit**: Keep each response within 200 characters for easy reading.
+
+13. **ChatGPT-style**: Respond in a ChatGPT-style with clear, concise bullet points that flow logically for easy reading.
+
+14. **Warm and respectful tone**: Aim to make every response warm, inviting, and respectful, showing that you value a real connection.
+
+15. **Rizzing up**: Try your best to help your user charm his girlfriend with engaging and romantic responses.`
     },
     {
       role: "assistant",
@@ -76,14 +91,18 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center">
-      <div className="w-full max-w-4xl flex flex-col min-h-screen bg-zinc-900">
-        <div className="p-4 text-center border-b border-zinc-800">
-          <h1 className="text-2xl font-bold text-pink-500">Rizzler AI</h1>
-          <p className="text-sm text-zinc-400">Share your dating conversation, and I'll help you with the perfect response.</p>
+    <main className="fixed inset-0 flex items-center justify-center">
+      <div className="w-full h-full flex flex-col bg-black/30 glass-effect">
+        <div className="p-3 sm:p-4 text-center border-b border-zinc-800/30 glass-effect">
+          <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
+            Rizzler AI
+          </h1>
+          <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+            Share your dating conversation, and I'll help you with the perfect response.
+          </p>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div className="flex-1 overflow-y-auto custom-scrollbar p-3 sm:p-4 space-y-3 sm:space-y-4">
           {messages.slice(1).map((message, index) => (
             <ChatMessage key={index} message={message} />
           ))}
