@@ -1,11 +1,11 @@
-type MessageProps = {
+type ChatMessageProps = {
   message: {
     role: 'user' | 'assistant';
     content: string;
   };
 };
 
-export default function ChatMessage({ message }: MessageProps) {
+export default function ChatMessage({ message }: ChatMessageProps) {
   const isUser = message.role === 'user';
   
   const formatContent = (content: string) => {

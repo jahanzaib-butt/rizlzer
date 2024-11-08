@@ -103,9 +103,11 @@ export default function Home() {
         </div>
 
         <div className="flex-1 overflow-y-auto custom-scrollbar p-3 sm:p-4 space-y-3 sm:space-y-4">
-          {messages.slice(1).map((message, index) => (
-            <ChatMessage key={index} message={message} />
-          ))}
+          {messages
+            .filter(msg => msg.role !== 'system')
+            .map((message, index) => (
+              <ChatMessage key={index} message={message as { role: 'user' | 'assistant', content: string }} />
+            ))}
         </div>
 
         <ChatInput onSendMessage={sendMessage} />
