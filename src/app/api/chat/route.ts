@@ -1,14 +1,15 @@
+import { NextResponse } from 'next/server'
 import { Groq } from "groq-sdk";
-import { NextResponse } from "next/server";
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
 });
 
+export const runtime = 'edge'
+
 export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
-    
     const chatCompletion = await groq.chat.completions.create({
       messages,
       model: "llama3-70b-8192",
