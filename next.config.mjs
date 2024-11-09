@@ -2,12 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  compress: true,
   images: {
-    domains: ['example.com'],
     unoptimized: true
   },
-  output: 'standalone'
+  output: 'export',
+  distDir: 'out',
+  trailingSlash: true
 };
 
 export default nextConfig;
